@@ -33,7 +33,7 @@ namespace ChooseImage
         private async void btnChoose_Tapped(object sender, TappedRoutedEventArgs e)
         {
             // representa un elemento GUI para poder seleccionar archivos
-            FileOpenPicker opener = new FileOpenPicker();
+            FileOpenPicker opener = new FileOpenPicker(); 
 
             // indicamos una ruta para empezar a buscar en ella
             opener.SuggestedStartLocation = PickerLocationId.PicturesLibrary;
@@ -61,8 +61,38 @@ namespace ChooseImage
                 // establecemos la imagen seleccionada en el preview
                 imgPreview.Source = bitmapImage;
 
+            }
+
+            // selecionar varios archivos
+
+            /*
+            IReadOnlyList<StorageFile> results = await opener.PickMultipleFilesAsync();
+
+            // se verifica si se ha seleccionado un archivo
+            if (results.Count > 0)
+            {
+         
+                // abrimos el archivo de la primera posición en modo lectura
+                var stream = await results.ElementAt(0).OpenAsync(Windows.Storage.FileAccessMode.Read);
+
+                // con un foreach podemos recorrer cada item
+                //foreach (StorageFile item in results)
+                //{
+                    
+                //}
+
+
+                BitmapImage bitmapImage = new BitmapImage();
+
+                // se establece el recurso como imagen
+                await bitmapImage.SetSourceAsync(stream);
+
+                // establecemos la imagen seleccionada en el preview
+                imgPreview.Source = bitmapImage;
+
 
             }
+            */
 
         }
     }
