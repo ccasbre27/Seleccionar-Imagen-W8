@@ -9,5 +9,25 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Image
+            x:Name="imgPreview" 
+            Grid.Row="0"
+            Width="300"
+            Height="300"/>
+
+        <Button
+            x:Name="btnChoose" 
+            Width="300"
+            Height="300"
+            Grid.Row="1"
+            HorizontalAlignment="Center"
+            Content="Seleccionar Imagen" Tapped="btnChoose_Tapped"
+            />
+
     </Grid>
 </Page>
